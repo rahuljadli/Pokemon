@@ -1,16 +1,24 @@
+import { createBrowserHistory } from "history";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import {
-  BrowserRouter as Router} from "react-router-dom";
+  BrowserRouter as Router
+} from "react-router-dom";
+import App from './App';
+import './index.css';
+import Layout from './Layout';
+import PokemonList from './PokemonList';
+
+import { withRouter } from "react-router";
+
+const history = createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
-  <Router>
+  <Router  history={history}>
+ 
     <App />
-    </Router>
-  </React.StrictMode>,
+    
+    </Router>,
   document.getElementById('root')
 );
 
