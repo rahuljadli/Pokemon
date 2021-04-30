@@ -35,7 +35,7 @@ export default function PokemonList(props) {
 
     const [pokemonList, setpokemonList] = useState({});
     useEffect(() => {
-            axios.get("https://pokeapi.co/api/v2/pokemon?limit=50")
+            axios.get("https://pokeapi.co/api/v2/pokemon?limit=51")
             .then(response=>{
                 const { data } = response;
                 const { results } = data;
@@ -63,7 +63,7 @@ export default function PokemonList(props) {
 const generatePokemonCard=()=>{
     
     return Object.keys(pokemonList).map(pokemon=>{
-        
+
         const img=pokemonList[pokemon].sprite;
         const id=pokemonList[pokemon].id;
       
